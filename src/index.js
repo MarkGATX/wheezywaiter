@@ -5,10 +5,32 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider, createTheme } from '@mui/material';
 
+
+
 const wheezyTheme = createTheme({
   palette: {
     primary: {
       main: '#aed6ed',
+    }
+  },
+  typography: {
+    h1: {
+      fontFamily:'Bakbak One'
+    },
+    h2: {
+      fontFamily:'Bakbak One'
+    },
+    h3: {
+      fontFamily:'Bakbak One'
+    },
+    h4: {
+      fontFamily:'Bakbak One'
+    },
+    h5: {
+      fontFamily:'Bakbak One'
+    },
+    h6: {
+      fontFamily:'Bakbak One'
     }
   }
 })
