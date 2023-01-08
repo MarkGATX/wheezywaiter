@@ -35,7 +35,7 @@ export default function Header({ currentPage, handlePageChange, props }) {
     const drawer = (
         <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
             <Typography variant="h6" sx={{ my: 2 }}>
-                MUI
+                WHEEZY
             </Typography>
             <Divider />
             <List>
@@ -55,8 +55,7 @@ export default function Header({ currentPage, handlePageChange, props }) {
 
     return (
         <>
-        <Box sx={{ display: 'flex' }}>
-            <AppBar component="nav" elevation={trigger ? 4 : 0} >
+            <AppBar elevation={trigger ? 4 : 0} sx={{ position: 'sticky', top: 0, display: 'flex' }}>
                 <Toolbar sx={{
                     height: trigger ? 160 : 300,
                     transition: trigger ? "0.3s ease-in" : "0.3s ease-out",
@@ -71,7 +70,7 @@ export default function Header({ currentPage, handlePageChange, props }) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' }, height:'100%' }}>
+                    <Box sx={{ display: { xs: 'none', sm: 'block' }, height: '100%' }}>
                         <img src={wheezyWaiterPic} style={{ height: '100%' }} alt='Wheezy Waiter' />
                     </Box>
                     <Typography variant="h4" style={{ textAlign: 'center' }} color='primary.contrastText' component="h1" sx={{ flexGrow: 1 }}>
@@ -80,7 +79,7 @@ export default function Header({ currentPage, handlePageChange, props }) {
                             I make videos.
                         </Typography>
                     </Typography>
-                    <Box sx={{ display: { xs: 'none', md: 'block' } }}>
+                    <Box component='nav' sx={{ display: { xs: 'none', md: 'block' } }}>
                         {navItems.map((item) => (
                             <Button key={item} sx={{ color: '#fff' }}>
                                 {item}
@@ -106,10 +105,7 @@ export default function Header({ currentPage, handlePageChange, props }) {
                     {drawer}
                 </Drawer>
             </Box>
-            
-        </Box>
-        
-   </>
+        </>
     );
 
 }
