@@ -8,6 +8,7 @@ import { ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material';
 import { responsiveFontSizes } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
+import Paper from '@mui/material/Paper';
 
 
 
@@ -17,28 +18,32 @@ let wheezyTheme = createTheme({
       main: '#aed6ed',
       contrastText: '#001e2b'
     },
-    contrastThreshold:4.5,
-    tonalOffset:.2,
+    secondary: {
+      main: '#006687',
+      contrastText: '#fff'
+    },
+    contrastThreshold: 4.5,
+    tonalOffset: .2,
 
   },
   typography: {
     h1: {
-      fontFamily:'Bakbak One'
+      fontFamily: 'Bakbak One'
     },
     h2: {
-      fontFamily:'Bakbak One'
+      fontFamily: 'Bakbak One'
     },
     h3: {
-      fontFamily:'Bakbak One'
+      fontFamily: 'Bakbak One'
     },
     h4: {
-      fontFamily:'Bakbak One'
+      fontFamily: 'Bakbak One'
     },
     h5: {
-      fontFamily:'Bakbak One'
+      fontFamily: 'Bakbak One'
     },
     h6: {
-      fontFamily:'Bakbak One'
+      fontFamily: 'Bakbak One'
     }
   }
 })
@@ -48,8 +53,10 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={wheezyTheme}>
-    <CssBaseline />
-      <App />
+      <CssBaseline />
+      <Paper>
+        <App />
+      </Paper>
     </ThemeProvider>
   </React.StrictMode>
 );

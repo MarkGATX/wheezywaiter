@@ -17,7 +17,7 @@ import "./Header.css";
 import wheezyWaiterPic from '../../images/wheezy_iso_lg.png'
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Contact'];
+const navItems = ['Home', 'Blog', 'Podcast', 'Wall of Preeminence', 'Contact'];
 
 export default function Header({ currentPage, handlePageChange, props }) {
     const trigger = useScrollTrigger({
