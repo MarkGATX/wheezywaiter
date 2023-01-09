@@ -2,6 +2,7 @@ import WheezyStory from "../WheezyStory"
 import { Box } from "@mui/material"
 import WheezyVids from "../WheezyVids"
 import Socials from "../Socials"
+import WOP from "../WOP"
 
 export default function Main () {
 
@@ -11,6 +12,7 @@ export default function Main () {
             <WheezyStory />
             <WheezyVids />
             <Socials />
+            <WOP />
         </Box>
 
         </>
