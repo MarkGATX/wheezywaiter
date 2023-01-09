@@ -1,7 +1,7 @@
 import WheezyStory from "../WheezyStory"
 import { Box } from "@mui/material"
-import Toolbar from "@mui/material/Toolbar"
 import WheezyVids from "../WheezyVids"
+import Socials from "../Socials"
 
 export default function Main () {
 
@@ -10,6 +10,7 @@ export default function Main () {
         <Box component='main'>
             <WheezyStory />
             <WheezyVids />
+            <Socials />
         </Box>
 
         </>
