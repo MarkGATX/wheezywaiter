@@ -5,34 +5,46 @@ import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 import Button from "@mui/material/Button";
+import { useEffect } from "react";
+import gapi from "https://apis.google.com/js/api.js"
+
+import API from '../utils/API.js'
+
+
+
+
+
+
 
 export default function WheezyVids() {
+    
+
     return (
-        <Container sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText', display:'flex', flexWrap:'wrap', mb:5 }} >
-            <Typography variant='h3' sx={{mb:2}} xs={12}>
+        <Container sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText', display: 'flex', flexWrap: 'wrap', mb: 5 }} >
+            <Typography variant='h3' sx={{ mb: 2 }} xs={12}>
                 Video goodness...
             </Typography>
-            <Grid2 container spacing={3} xs={12} sx={{display:'flex', justifyContent:"center", alignItems:'center', mb:3}}>
+            <Grid2 container spacing={3} xs={12} sx={{ display: 'flex', justifyContent: "center", alignItems: 'center', mb: 3 }}>
                 <Grid2 xs={12}>
-                    <img src={testImage} alt='main space for test video' style={{ width: '100%' }}/>
+                    <img src={testImage} alt='main space for test video' style={{ width: '100%' }} />
                 </Grid2>
                 <Grid2 xs={6} md={3}>
-                    <img src={testImage} alt='secondary space for test video' style={{ width: '100%' }}/>
+                    <img src={testImage} alt='secondary space for test video' style={{ width: '100%' }} />
                 </Grid2>
                 <Grid2 xs={6} md={3}>
-                    <img src={testImage} alt='secondary space for test video' style={{ width: '100%' }}/>
+                    <img src={testImage} alt='secondary space for test video' style={{ width: '100%' }} />
                 </Grid2>
                 <Grid2 xs={6} md={3}>
-                    <img src={testImage} alt='secondary space for test video' style={{ width: '100%' }}/>
+                    <img src={testImage} alt='secondary space for test video' style={{ width: '100%' }} />
                 </Grid2>
                 <Grid2 xs={6} md={3}>
-                    <img src={testImage} alt='secondary space for test video' style={{ width: '100%' }}/>
+                    <img src={testImage} alt='secondary space for test video' style={{ width: '100%' }} />
                 </Grid2>
-                <Grid2 xs={6} md={3} sx={{textAlign:'right', display: 'inline-flex', justifyContent:'end', verticalAlign: 'middle'}}>
-                <Button variant='contained' sx={{backgroundColor: 'secondary.main', color:'#fff'}}><ArrowBackOutlinedIcon />More this way</Button>
+                <Grid2 xs={6} md={3} sx={{ textAlign: 'right', display: 'inline-flex', justifyContent: 'end', verticalAlign: 'middle' }}>
+                    <Button variant='contained' sx={{ backgroundColor: 'secondary.main', color: '#fff' }}><ArrowBackOutlinedIcon />More this way</Button>
                 </Grid2>
-                <Grid2 xs={6} md={3} sx ={{display: 'inline-flex', verticalAlign: 'middle'}}>
-                   <Button variant='contained' sx={{color:'#fff'}}>More that way <ArrowForwardOutlinedIcon /></Button>
+                <Grid2 xs={6} md={3} sx={{ display: 'inline-flex', verticalAlign: 'middle' }}>
+                    <Button onClick={() => {API.wheezyVidLookup()}} variant='contained' sx={{ color: '#fff' }}>More that way <ArrowForwardOutlinedIcon /></Button>
                 </Grid2>
             </Grid2>
         </Container>

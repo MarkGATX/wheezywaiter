@@ -76,9 +76,9 @@ root.render(
   <React.StrictMode>
     <ThemeProvider theme={wheezyTheme}>
       <CssBaseline />
-      <Paper>
+      {/* <Paper> */}
         <App />
-      </Paper>
+      {/* </Paper> */}
     </ThemeProvider>
   </React.StrictMode>
 );

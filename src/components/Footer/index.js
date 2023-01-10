@@ -13,7 +13,7 @@ export default function Footer() {
         <>
             <Box component='footer' sx={{ backgroundColor: 'primary.main', height: '8rem', color: 'primary.contrastText' }}>
                 <Grid2 container sx={{ justifyContent: 'space-between', height: '100%', alignItems: 'center', m: 2 }}>
-                    <Grid2 container xs={12} spacing={5} sx={{justifyContent:'center'}}>
+                    <Grid2 container xs={12} spacing={5} sx={{justifyContent:'center', width:'100%'}}>
                         <Grid2 xs={1} ><img onClick={() => { window.open('https://www.youtube.com/wheezywaiter', '_blank') }} src={youtube} className='footerIcons' alt="youtube logo" /></Grid2>
                         <Grid2 xs={1} ><img onClick={() => { window.open('http://reddit.com/r/beardlovers', '_blank') }} src={reddit} className='footerIcons' alt="reddit logo" /></Grid2>
                         <Grid2 xs={1} ><img onClick={() => { window.open('http://www.twitter.com/wheezywaiter', '_blank') }} src={twitter} className='footerIcons' alt="twitter logo" /></Grid2>
@@ -25,7 +25,7 @@ export default function Footer() {
                         <Typography variant='subtitle2'>
                             FOR BUSINESS INQUIRIES...
                         </Typography>
-                        <Typography variant='subtitle2' onClick={() => { window.open('mailto:bashley@settebelloentertainment.com?subject=Business Inquiry for Wheezy Waiter') }}>
+                        <Typography variant='subtitle2' sx={{cursor:'pointer'}} onClick={() => { window.open('mailto:bashley@settebelloentertainment.com?subject=Business Inquiry for Wheezy Waiter') }}>
                             bashley@settebelloentertainment.com
                         </Typography>
                     </Grid2>

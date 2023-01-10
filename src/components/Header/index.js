@@ -13,11 +13,12 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
+import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
 import "./Header.css";
 import wheezyWaiterPic from '../../images/wheezy_iso_lg.png'
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Blog', 'Podcast', 'Wall of Preeminence', 'Contact'];
+const navItems = ['Home', 'Blog', 'Podcast', 'Contact'];
 
 export default function Header({ currentPage, handlePageChange, props }) {
     const trigger = useScrollTrigger({
@@ -40,7 +41,7 @@ export default function Header({ currentPage, handlePageChange, props }) {
             <Divider />
             <List>
                 {navItems.map((item) => (
-                    <ListItem key={item} disablePadding>
+                    <ListItem key={item} >
                         <ListItemButton sx={{ textAlign: 'center' }}>
                             <ListItemText primary={item} />
                         </ListItemButton>
@@ -60,6 +61,8 @@ export default function Header({ currentPage, handlePageChange, props }) {
                     height: trigger ? 160 : 300,
                     transition: trigger ? "0.3s ease-in" : "0.3s ease-out",
                     flexGrow: 1,
+                    display:'flex',
+                    pl:0,
                 }}>
                     <IconButton
                         color="inherit"
@@ -70,22 +73,22 @@ export default function Header({ currentPage, handlePageChange, props }) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Box sx={{ display: { xs: 'none', sm: 'block' }, height: '100%' }}>
+                    <Box xs={3} sx={{ display: { xs: 'none', sm: 'block' }, height: '100%' }}>
                         <img src={wheezyWaiterPic} style={{ height: '100%' }} alt='Wheezy Waiter' />
                     </Box>
-                    <Typography variant="h4" style={{ textAlign: 'center' }} color='primary.contrastText' component="h1" sx={{ flexGrow: 1 }}>
+                    <Typography xs={4} variant="h4" style={{ textAlign: 'center' }} color='primary.contrastText' component="h1" sx={{ flexGrow: 1 }}>
                         WHEEZY WAITER
                         <Typography variant="h6" style={{ textAlign: 'center' }}>
                             I make videos.
                         </Typography>
                     </Typography>
-                    <Box component='nav' sx={{ display: { xs: 'none', md: 'block' } }}>
+                    <Grid2 container component='nav' md={4} spacing={5} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'space-between', flexWrap: 'wrap' }}>
                         {navItems.map((item) => (
-                            <Button key={item} sx={{ color: '#fff' }}>
+                            <Button key={item} md={12} lg={3} sx={{ color: '#fff', m:1 }}>
                                 {item}
                             </Button>
                         ))}
-                    </Box>
+                    </Grid2>
                 </Toolbar>
             </AppBar>
             <Box component="nav">
