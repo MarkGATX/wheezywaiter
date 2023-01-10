@@ -4,17 +4,16 @@ import WheezyVids from "../WheezyVids"
 import Socials from "../Socials"
 import WOP from "../WOP"
 
-export default function Main () {
+export default function Main() {
 
     return (
         <>
-        <Box component='main'>
-            <WheezyStory />
-            <WheezyVids />
-            <Socials />
-            <WOP />
-        </Box>
-
+            <Box component='main'>
+                <WheezyStory />
+                <WheezyVids />
+                <Socials />
+                <WOP />
+            </Box>
         </>
     )
 }

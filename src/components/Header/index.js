@@ -75,7 +75,7 @@ export default function Header({ currentPage, handlePageChange, props }) {
                     </Box>
                     <Typography variant="h4" style={{ textAlign: 'center' }} color='primary.contrastText' component="h1" sx={{ flexGrow: 1 }}>
                         WHEEZY WAITER
-                        <Typography variant="h6" style={{ textAlign: 'center' }} component="h6">
+                        <Typography variant="h6" style={{ textAlign: 'center' }}>
                             I make videos.
                         </Typography>
                     </Typography>

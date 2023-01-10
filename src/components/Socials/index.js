@@ -1,4 +1,4 @@
-import { Container, Typography } from "@mui/material"
+import { Container, Typography} from "@mui/material"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import youtube from '../../images/youtube.png'
 import facebook from '../../images/facebook.png'
@@ -11,6 +11,7 @@ import './Socials.css'
 export default function Socials () {
     return (
         <Container>
+
             <Typography variant='h3'>
                 Socials
             </Typography>
@@ -25,6 +26,7 @@ export default function Socials () {
                 <Grid2 xs={6} sm={4}><img onClick={()=> {window.open('https://instagram.com/wheezywaiter', '_blank')}} src={insta} className='socialIcons' alt="instagram logo"/></Grid2>
                 <Grid2 xs={6} sm={4}><img onClick={()=> {window.open('http://patreon.com/wheezywaiter', '_blank')}} src={patreon} className='socialIcons' alt="patreon logo"/></Grid2>
             </Grid2>
+
         </Container>
     )
 }

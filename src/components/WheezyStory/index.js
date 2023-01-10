@@ -8,7 +8,7 @@ export default function WheezyStory() {
 
     return (
         <>
-        <Container sx={{my:3}}>
+        <Container sx={{my:5}}>
             <Grid2 container spacing={5}  component='section'>
                 <Grid2 xs={12} md={5}>
                     <Typography variant="h3" sx={{color:'primary.contrastText'}}>

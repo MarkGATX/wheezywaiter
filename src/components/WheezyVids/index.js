@@ -8,7 +8,7 @@ import Button from "@mui/material/Button";
 
 export default function WheezyVids() {
     return (
-        <Container sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText', display:'flex', flexWrap:'wrap', mb:3 }} >
+        <Container sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText', display:'flex', flexWrap:'wrap', mb:5 }} >
             <Typography variant='h3' sx={{mb:2}} xs={12}>
                 Video goodness...
             </Typography>
