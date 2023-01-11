@@ -4,3 +4,22 @@
     background-size:cover;
     
 }
+
+.wopContainer::before {
+    content: "";
+    position: absolute;
+    top: -229px;
+    left: 0;
+    width: 150px;
+    height: 250px;
+    background-image: url('../../images/eagle.png');
+    background-size:contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+  }
+
+  @media screen and (max-width: 900px) {
+    .wopContainer::before {
+        display:none;
+    }
+  }

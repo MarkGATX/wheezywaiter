@@ -10,7 +10,6 @@ import Skeleton from "@mui/material/Skeleton";
 import axios from "axios";
 import { AspectRatio } from "react-aspect-ratio";
 import Tooltip from "@mui/material/Tooltip";
-import Slide from "@mui/material/Slide";
 import './WheezyVids.css'
 
 export default function WheezyVids() {
@@ -69,7 +68,7 @@ export default function WheezyVids() {
                         </iframe>
                     ) : (
                         <AspectRatio ratio='16/9' style={{ maxWidth: '100%' }}>
-                            <Skeleton variant="rectangular" sx={{ width: '100%' }} />
+                            <Skeleton variant="rectangular" sx={{ width: '100%', height:'100%' }} />
                         </AspectRatio>
                     )
                     }
@@ -87,9 +86,9 @@ export default function WheezyVids() {
 
                 ) : (
                     <Grid2 xs={6} md={3}>
-                        {/* <AspectRatio ratio='16/9' style={{ maxWidth: '100%' }}> */}
+                        <AspectRatio ratio='16/9' style={{ maxWidth: '100%' }}>
                         <Skeleton variant="rectangular" sx={{ width: '100%' }} />
-                        {/* </AspectRatio> */}
+                        </AspectRatio>
                     </Grid2>
                 )}
 

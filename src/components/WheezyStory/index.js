@@ -2,7 +2,7 @@ import { Container } from "@mui/system";
 import { Typography } from "@mui/material";
 import craigHeadshot from '../../images/Craig_headshot_1000.jpg'
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import Box from "@mui/material/Box";
+import { Parallax } from "react-parallax";
 
 export default function WheezyStory() {
 
@@ -19,8 +19,10 @@ export default function WheezyStory() {
                     Sometimes my wife, Chyna is in them, too.
                     </Typography>
                 </Grid2>
-                <Grid2 xs={12} md={7}>
-                    <img src={craigHeadshot} alt='Craig Benzine mugging for the camera' style={{ width: '100%' }} />
+                <Grid2 xs={12} md={7} style={{height:'100%'}}>
+                    <Parallax bgImage={craigHeadshot} strength={100}>
+                    <img src={craigHeadshot} fetchpriority='high' alt='Craig Benzine mugging for the camera' style={{ width: '100%', visibility:'hidden' }} />
+                    </Parallax>
                 </Grid2>
             </Grid2>
             </Container>

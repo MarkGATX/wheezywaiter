@@ -1,4 +1,14 @@
 .footerIcons {
     width:1.5em;
     cursor:pointer;
+    transition:all .3s;
+}
+
+.footerIcons:hover {
+    scale:120%;
+    transform:rotate(360deg);
+}
+
+.footerIcons:active {
+    scale:90%;
 }

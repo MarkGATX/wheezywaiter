@@ -1,6 +1,7 @@
 import { Container, Typography } from "@mui/material"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import Paper from "@mui/material/Paper"
+import eagle from '../../images/eagle.png'
 import './WOP.css'
 
 const wopMembers = [
@@ -60,14 +61,17 @@ const wopMembers = [
 
 export default function WOP() {
     return (
-        <Container sx={{backgroundColor:'primary.main', color:'primary.contrastText', pb:3, mb:5}}>
+        <Container className='wopContainer' sx={{backgroundColor:'primary.main', color:'primary.contrastText',position:'relative', pb:3, mb:5}}>
+            {/* <img src={eagle} style={{width:'80px', top:'-120px', position:'absolute'}} /> */}
             <Typography variant='h3'>
                 Wall of Preeminence
             </Typography>
             <Typography variant='body'>
                 You too can join the lauded souls on the heralded Wall of Preeminence. All you have to do is become a Patron to get your name emblazoned in 72 dpi on a picture of some bricks.
             </Typography>
+            
             <Paper  elevation={5} sx={{my:3}}>
+            
                 <Grid2 container className='wop' spacing={2} sx={{ flexWrap: 'wrap', justifyContent:'space-around', mx:0 }}>
                     {wopMembers.map((name, index) => (
                         <Grid2 xs={12} sm={6} md={4} key={index}>

@@ -18,7 +18,7 @@ import "./Header.css";
 import wheezyWaiterPic from '../../images/wheezy_iso_lg.png'
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Blog', 'Podcast', 'Contact'];
+const navItems = ['Home', 'Contact'];
 
 export default function Header({ currentPage, handlePageChange, props }) {
     const trigger = useScrollTrigger({
@@ -57,8 +57,8 @@ export default function Header({ currentPage, handlePageChange, props }) {
     return (
         <>
             <AppBar elevation={trigger ? 4 : 0} sx={{ position: 'sticky', top: 0, display: 'flex' }}>
-                <Toolbar sx={{
-                    height: trigger ? 160 : 300,
+                <Toolbar sx={{ 
+                    height: {xs: 160, md: !trigger ? 300 : 160},
                     transition: trigger ? "0.3s ease-in" : "0.3s ease-out",
                     flexGrow: 1,
                     display:'flex',
@@ -69,11 +69,11 @@ export default function Header({ currentPage, handlePageChange, props }) {
                         aria-label="open drawer"
                         edge="start"
                         onClick={handleDrawerToggle}
-                        sx={{ mr: 2, display: { md: 'none' } }}
+                        sx={{ mx: 2, display: { md: 'none' } }}
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Box xs={3} sx={{ display: { xs: 'none', sm: 'block' }, height: '100%' }}>
+                    <Box xs={2} sm={3} sx={{ display: { xs: 'none', sm: 'block' }, height: '100%' }}>
                         <img src={wheezyWaiterPic} style={{ height: '100%' }} alt='Wheezy Waiter' />
                     </Box>
                     <Typography xs={4} variant="h4" style={{ textAlign: 'center' }} color='primary.contrastText' component="h1" sx={{ flexGrow: 1 }}>
@@ -82,7 +82,7 @@ export default function Header({ currentPage, handlePageChange, props }) {
                             I make videos.
                         </Typography>
                     </Typography>
-                    <Grid2 container component='nav' md={4} spacing={5} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'space-between', flexWrap: 'wrap' }}>
+                    <Grid2 container component='nav' md={4} spacing={5} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
                         {navItems.map((item) => (
                             <Button key={item} md={12} lg={3} sx={{ color: '#fff', m:1 }}>
                                 {item}

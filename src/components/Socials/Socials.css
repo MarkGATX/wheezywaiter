@@ -2,4 +2,14 @@
     width:3rem;
     height:auto;
     cursor:pointer;
+    transition:all .5s;
+}
+
+.socialIcons:hover {
+    scale:120%;
+    transform:rotate(360deg);
+}
+
+.socialIcons:active {
+    scale:90%;
 }

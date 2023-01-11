@@ -2,14 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@mui/material';
-// import ThemeProvider from '@mui/material/ThemeProvider';
 import { createTheme } from '@mui/material';
 import { responsiveFontSizes } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
-import Paper from '@mui/material/Paper';
-
 
 
 let wheezyTheme = createTheme({
