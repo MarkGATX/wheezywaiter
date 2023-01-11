@@ -62,7 +62,7 @@ export default function WheezyVids() {
                     <Grid2 xs={6} md={3}>
                         <AspectRatio ratio='16/9' style={{ maxWidth: '100%' }}>
                             <Tooltip title={video.snippet.title} placement='top'>
-                    <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} style={{ width: '100%' }} />
+                    <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} style={{ width: '100%' }} key={index}/>
                     </Tooltip>
                     </AspectRatio>
                     </Grid2>
