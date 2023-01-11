@@ -1,22 +1,17 @@
 import { Typography } from "@mui/material";
 import Container from "@mui/material/Container";
-import testImage from '../../images/testImage.jpg'
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
 import ArrowForwardOutlinedIcon from '@mui/icons-material/ArrowForwardOutlined';
 import Button from "@mui/material/Button";
 import { useEffect } from "react";
-import gapi from "https://apis.google.com/js/api.js"
 import { useState } from "react";
 import Skeleton from "@mui/material/Skeleton";
 import axios from "axios";
 import { AspectRatio } from "react-aspect-ratio";
 import Tooltip from "@mui/material/Tooltip";
+import Slide from "@mui/material/Slide";
 import './WheezyVids.css'
-
-import API from '../utils/API.js'
-
-
 
 export default function WheezyVids() {
     // Set state for the search result and the search query
@@ -39,9 +34,6 @@ export default function WheezyVids() {
         }
     };
     
-
-
-
     useEffect(() => {
         const wheezyVidLookup = async () => {
             try {
@@ -50,7 +42,6 @@ export default function WheezyVids() {
                 setMainVid(response.data.items[0].snippet.resourceId.videoId);
                 setResult(response.data.items);
                 setNextVids(response.data.nextPageToken);
-                console.log(NextVids)
                 setPrevVids(response.data.prevPageToken);
             } catch (error) {
                 console.error(error);
@@ -69,11 +60,12 @@ export default function WheezyVids() {
                 <Grid2 xs={12} >
                     {MainVid ? (
                         <iframe
-                            class="video"
+                            title="Main Video Frame"
+                            className="video"
                             src={`https://www.youtube.com/embed/${MainVid}`}
-                            frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope;"
-                            allowfullscreen>
+                            allowFullScreen
+                            >
                         </iframe>
                     ) : (
                         <AspectRatio ratio='16/9' style={{ maxWidth: '100%' }}>
@@ -86,8 +78,8 @@ export default function WheezyVids() {
                 {result ? result.map((video, index) => (
                     <Grid2 xs={6} md={3}>
                         <AspectRatio ratio='16/9' style={{ maxWidth: '100%' }}>
-                            <Tooltip title={video.snippet.title} placement='top'>
-                                <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} style={{ width: '100%' }} key={index} />
+                            <Tooltip title={video.snippet.title} sx={{backgroundColor:'palette.secondary.main', color:'palette.secondary.contrastText'}} placement='top'>
+                                <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} onClick={()=> setMainVid(video.snippet.resourceId.videoId)} style={{ width: '100%' }} key={index} />
                             </Tooltip>
                         </AspectRatio>
                     </Grid2>
@@ -114,7 +106,7 @@ export default function WheezyVids() {
                     {NextVids ? (
                         <Button onClick={() => { wheezyVidUpdate( NextVids ) }} variant='contained' sx={{ color: '#fff' }}>More that way <ArrowForwardOutlinedIcon /></Button>
                     ) : (
-                        <Button disdabled onClick={() => { wheezyVidUpdate( NextVids ) }} variant='contained' sx={{ color: '#fff' }}>More that way <ArrowForwardOutlinedIcon /></Button>
+                        <Button disabled onClick={() => { wheezyVidUpdate( NextVids ) }} variant='contained' sx={{ color: '#fff' }}>More that way <ArrowForwardOutlinedIcon /></Button>
                     )}
                     
                 </Grid2>
