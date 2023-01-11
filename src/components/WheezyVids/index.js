@@ -16,17 +16,42 @@ import './WheezyVids.css'
 
 import API from '../utils/API.js'
 
+
+
 export default function WheezyVids() {
     // Set state for the search result and the search query
     const [result, setResult] = useState([]);
     const [MainVid, setMainVid] = useState('');
+    const [NextVids, setNextVids] = useState('');
+    const [PrevVids, setPrevVids] = useState('');
+
+    const wheezyVidUpdate = async (token) => {
+        try {
+            console.log(token)
+            const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4&pageToken=${token}&playlistId=UUQL5ABUvwY7YoW5lgMyAS_w&key=${process.env.REACT_APP_YT_API_KEY}`);
+            console.log(response.data)
+            setMainVid(response.data.items[0].snippet.resourceId.videoId);
+            setResult(response.data.items);
+            setNextVids(response.data.nextPageToken);
+            setPrevVids(response.data.prevPageToken)
+        } catch (error) {
+            console.error(error);
+        }
+    };
+    
+
+
 
     useEffect(() => {
         const wheezyVidLookup = async () => {
             try {
                 const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4&playlistId=UUQL5ABUvwY7YoW5lgMyAS_w&key=${process.env.REACT_APP_YT_API_KEY}`);
+                console.log(response.data)
                 setMainVid(response.data.items[0].snippet.resourceId.videoId);
                 setResult(response.data.items);
+                setNextVids(response.data.nextPageToken);
+                console.log(NextVids)
+                setPrevVids(response.data.prevPageToken);
             } catch (error) {
                 console.error(error);
             }
@@ -56,31 +81,42 @@ export default function WheezyVids() {
                         </AspectRatio>
                     )
                     }
-                    
+
                 </Grid2>
                 {result ? result.map((video, index) => (
                     <Grid2 xs={6} md={3}>
                         <AspectRatio ratio='16/9' style={{ maxWidth: '100%' }}>
                             <Tooltip title={video.snippet.title} placement='top'>
-                    <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} style={{ width: '100%' }} key={index}/>
-                    </Tooltip>
-                    </AspectRatio>
+                                <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} style={{ width: '100%' }} key={index} />
+                            </Tooltip>
+                        </AspectRatio>
                     </Grid2>
                 )
-                    
+
                 ) : (
                     <Grid2 xs={6} md={3}>
                         {/* <AspectRatio ratio='16/9' style={{ maxWidth: '100%' }}> */}
-                            <Skeleton variant="rectangular" sx={{ width: '100%' }} />
+                        <Skeleton variant="rectangular" sx={{ width: '100%' }} />
                         {/* </AspectRatio> */}
                     </Grid2>
                 )}
-                
+
                 <Grid2 xs={6} md={3} sx={{ textAlign: 'right', display: 'inline-flex', justifyContent: 'end', verticalAlign: 'middle' }}>
-                    <Button variant='contained' sx={{ backgroundColor: 'secondary.main', color: '#fff' }}><ArrowBackOutlinedIcon />More this way</Button>
+                    {PrevVids ? (
+                        <Button variant='contained' onClick={() => { wheezyVidUpdate( PrevVids ) }} sx={{ backgroundColor: 'secondary.main', color: '#fff' }}><ArrowBackOutlinedIcon />More this way</Button>
+                    ) : (
+                        <Button disabled variant='contained' onClick={() => { wheezyVidUpdate( PrevVids ) }} sx={{ backgroundColor: 'secondary.main', color: '#fff' }}><ArrowBackOutlinedIcon />More this way</Button>
+                    )
+                    }
+
                 </Grid2>
                 <Grid2 xs={6} md={3} sx={{ display: 'inline-flex', verticalAlign: 'middle' }}>
-                    <Button onClick={() => { API.wheezyVidLookup() }} variant='contained' sx={{ color: '#fff' }}>More that way <ArrowForwardOutlinedIcon /></Button>
+                    {NextVids ? (
+                        <Button onClick={() => { wheezyVidUpdate( NextVids ) }} variant='contained' sx={{ color: '#fff' }}>More that way <ArrowForwardOutlinedIcon /></Button>
+                    ) : (
+                        <Button disdabled onClick={() => { wheezyVidUpdate( NextVids ) }} variant='contained' sx={{ color: '#fff' }}>More that way <ArrowForwardOutlinedIcon /></Button>
+                    )}
+                    
                 </Grid2>
             </Grid2>
         </Container>
