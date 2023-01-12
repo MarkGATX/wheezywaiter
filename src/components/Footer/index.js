@@ -11,7 +11,7 @@ import './Footer.css'
 export default function Footer() {
     return (
         <>
-            <Box component='footer' sx={{ backgroundColor: 'primary.main', height: '8rem', color: 'primary.contrastText' }}>
+            <Box component='footer' sx={{ backgroundColor: 'primary.main', height: '12rem', color: 'primary.contrastText', pt:2, pb:5}}>
                 <Grid2 container sx={{ justifyContent: 'space-between', height: '100%', alignItems: 'center', m: 2 }}>
                     <Grid2 container xs={12} spacing={5} sx={{justifyContent:'center', width:'100%'}}>
                         <Grid2 xs={1} ><img onClick={() => { window.open('https://www.youtube.com/wheezywaiter', '_blank') }} src={youtube} className='footerIcons' alt="youtube logo" /></Grid2>

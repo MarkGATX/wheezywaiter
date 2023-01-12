@@ -19,7 +19,7 @@ import "./Header.css";
 import wheezyWaiterPic from '../../images/wheezy_iso_lg.png'
 
 const drawerWidth = 240;
-const navItems = ['Home', 'Contact'];
+const navItems = ['Home', 'Projects'];
 
 export default function Header({ toggleMode, mode }) {
     const trigger = useScrollTrigger({
