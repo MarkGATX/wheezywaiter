@@ -14,13 +14,14 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Grid2 from '@mui/material/Unstable_Grid2/Grid2';
+import { LightMode, DarkMode} from '@mui/icons-material';
 import "./Header.css";
 import wheezyWaiterPic from '../../images/wheezy_iso_lg.png'
 
 const drawerWidth = 240;
 const navItems = ['Home', 'Contact'];
 
-export default function Header({ currentPage, handlePageChange, props }) {
+export default function Header({ toggleMode, mode }) {
     const trigger = useScrollTrigger({
         disableHysteresis: true,
         threshold: 0,
@@ -56,7 +57,7 @@ export default function Header({ currentPage, handlePageChange, props }) {
 
     return (
         <>
-            <AppBar elevation={trigger ? 4 : 0} sx={{ position: 'sticky', top: 0, display: 'flex' }}>
+            <AppBar elevation={trigger ? 4 : 0} sx={{ position: 'sticky', top: 0, display: 'flex', backgroundColor:'primary.main' }}>
                 <Toolbar sx={{ 
                     height: {xs: 160, md: !trigger ? 300 : 160},
                     transition: trigger ? "0.3s ease-in" : "0.3s ease-out",
@@ -84,11 +85,15 @@ export default function Header({ currentPage, handlePageChange, props }) {
                     </Typography>
                     <Grid2 container component='nav' md={4} spacing={5} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
                         {navItems.map((item) => (
-                            <Button key={item} md={12} lg={3} sx={{ color: '#fff', m:1 }}>
+                            <Button key={item} md={12} lg={3} sx={{  m:1 }}>
                                 {item}
                             </Button>
                         ))}
+                        
                     </Grid2>
+                    <IconButton sx={{ ml: 3 }} onClick={() => toggleMode()} color="palette.primary.main">
+                            {mode === true ? <LightMode /> : <DarkMode />}
+                        </IconButton>
                 </Toolbar>
             </AppBar>
             <Box component="nav">

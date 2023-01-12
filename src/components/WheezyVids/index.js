@@ -94,18 +94,18 @@ export default function WheezyVids() {
 
                 <Grid2 xs={6} md={3} sx={{ textAlign: 'right', display: 'inline-flex', justifyContent: 'end', verticalAlign: 'middle' }}>
                     {PrevVids ? (
-                        <Button variant='contained' onClick={() => { wheezyVidUpdate( PrevVids ) }} sx={{ backgroundColor: 'secondary.main', color: '#fff' }}><ArrowBackOutlinedIcon />More this way</Button>
+                        <Button variant='contained' onClick={() => { wheezyVidUpdate( PrevVids ) }} ><ArrowBackOutlinedIcon />More this way</Button>
                     ) : (
-                        <Button disabled variant='contained' onClick={() => { wheezyVidUpdate( PrevVids ) }} sx={{ backgroundColor: 'secondary.main', color: '#fff' }}><ArrowBackOutlinedIcon />More this way</Button>
+                        <Button disabled variant='contained' onClick={() => { wheezyVidUpdate( PrevVids ) }} ><ArrowBackOutlinedIcon />More this way</Button>
                     )
                     }
 
                 </Grid2>
                 <Grid2 xs={6} md={3} sx={{ display: 'inline-flex', verticalAlign: 'middle' }}>
                     {NextVids ? (
-                        <Button onClick={() => { wheezyVidUpdate( NextVids ) }} variant='contained' sx={{ color: '#fff' }}>More that way <ArrowForwardOutlinedIcon /></Button>
+                        <Button onClick={() => { wheezyVidUpdate( NextVids ) }} variant='contained' >More that way <ArrowForwardOutlinedIcon /></Button>
                     ) : (
-                        <Button disabled onClick={() => { wheezyVidUpdate( NextVids ) }} variant='contained' sx={{ color: '#fff' }}>More that way <ArrowForwardOutlinedIcon /></Button>
+                        <Button disabled onClick={() => { wheezyVidUpdate( NextVids ) }} variant='contained' >More that way <ArrowForwardOutlinedIcon /></Button>
                     )}
                     
                 </Grid2>
