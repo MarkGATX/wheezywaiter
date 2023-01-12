@@ -30,7 +30,7 @@ export default function Footer() {
                         </Typography>
                     </Grid2>
                     <Grid2 className='copyright' xs={12} sm={5}>
-                        <Typography variant='subtitle2'>
+                        <Typography variant='subtitle2' sx={{textAlign:'center'}}>
                             Content © 2020 by Wheezy. Site design by Mark Gardner
                         </Typography>
 
