@@ -61,9 +61,9 @@ const wopMembers = [
 
 export default function WOP() {
     return (
-        <Container className='wopContainer' sx={{backgroundColor:'primary.main', color:'primary.contrastText',position:'relative', pb:3, mb:5}}>
+        <Container className='wopContainer' sx={{backgroundColor:'primary.main', color:'primary.contrastText',position:'relative', pb:3, my:5}}>
             {/* <img src={eagle} style={{width:'80px', top:'-120px', position:'absolute'}} /> */}
-            <Typography variant='h3'>
+            <Typography variant='h3' sx={{pt:4}}>
                 Wall of Preeminence
             </Typography>
             <Typography variant='body'>

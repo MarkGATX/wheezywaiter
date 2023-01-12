@@ -64,8 +64,9 @@ export default function Header({ toggleMode, mode }) {
                     flexGrow: 1,
                     display:'flex',
                     pl:0,
-                }}>
-                    <IconButton
+                    
+                }} style={{padding:0}}>
+                    <IconButton xs={1}
                         color="inherit"
                         aria-label="open drawer"
                         edge="start"
@@ -77,13 +78,13 @@ export default function Header({ toggleMode, mode }) {
                     <Box xs={2} sm={3} sx={{ display: { xs: 'none', sm: 'block' }, height: '100%' }}>
                         <img src={wheezyWaiterPic} style={{ height: '100%' }} alt='Wheezy Waiter' />
                     </Box>
-                    <Typography xs={4} variant="h4" style={{ textAlign: 'center' }} color='primary.contrastText' component="h1" sx={{ flexGrow: 1 }}>
+                    <Typography xs={6} variant="h4" style={{ textAlign: 'center' }} color='primary.contrastText' component="h1" sx={{ flexGrow: 1 }}>
                         WHEEZY WAITER
                         <Typography variant="subtitle1" style={{ textAlign: 'center' }}>
                             I make videos.
                         </Typography>
                     </Typography>
-                    <Grid2 container component='nav' md={4} spacing={5} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
+                    <Grid2 container component='nav' md={2} spacing={5} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
                         {navItems.map((item) => (
                             <Button key={item} md={12} lg={3} sx={{  m:1 }}>
                                 {item}
@@ -91,7 +92,7 @@ export default function Header({ toggleMode, mode }) {
                         ))}
                         
                     </Grid2>
-                    <IconButton sx={{ ml: 3 }} onClick={() => toggleMode()} color="palette.primary.main">
+                    <IconButton xs={1} sx={{ ml: 3 }} onClick={() => toggleMode()} color="palette.primary.main">
                             {mode === true ? <LightMode /> : <DarkMode />}
                         </IconButton>
                 </Toolbar>

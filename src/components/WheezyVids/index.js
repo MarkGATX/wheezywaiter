@@ -52,7 +52,7 @@ export default function WheezyVids() {
 
     return (
         <Container sx={{ backgroundColor: 'primary.main', color: 'primary.contrastText', display: 'flex', flexWrap: 'wrap', mb: 5 }} >
-            <Typography variant='h3' sx={{ mb: 2 }} xs={12}>
+            <Typography variant='h3' sx={{ my: 4 }} xs={12}>
                 Video goodness...
             </Typography>
             <Grid2 container spacing={3} xs={12} sx={{ display: 'flex', justifyContent: "center", alignItems: 'center', mb: 3 }}>
