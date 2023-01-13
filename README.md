@@ -14,6 +14,8 @@ Let's see how it all turned out.
 
 [You can see it live here to take a look. ](https://markgatx.github.io/wheezywaiter/)
 
+![Screenshot of the reformated Wheezy Waiter site](./src/images/readmeImg/ww_screenshot.jpg)
+
 
 ___
 
