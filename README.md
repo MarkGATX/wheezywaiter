@@ -107,6 +107,7 @@ ___
 - Add blog and logged in functionality
 - Reformat the MUI imports to be more efficient
 - Reformat dark mode to take advantage of MUI's native implementation
+- Add transition effects to YouTube updates
 
 ___
 
