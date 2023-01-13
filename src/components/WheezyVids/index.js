@@ -75,10 +75,10 @@ export default function WheezyVids() {
 
                 </Grid2>
                 {result ? result.map((video, index) => (
-                    <Grid2 xs={6} md={3}>
+                    <Grid2 xs={6} md={3} key={index}>
                         <AspectRatio ratio='16/9' style={{ maxWidth: '100%' }}>
                             <Tooltip title={video.snippet.title} sx={{backgroundColor:'palette.secondary.main', color:'palette.secondary.contrastText'}} placement='top'>
-                                <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} onClick={()=> setMainVid(video.snippet.resourceId.videoId)} style={{ width: '100%' }} key={index} />
+                                <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} onClick={()=> setMainVid(video.snippet.resourceId.videoId)} style={{ width: '100%' }}  />
                             </Tooltip>
                         </AspectRatio>
                     </Grid2>
@@ -91,7 +91,7 @@ export default function WheezyVids() {
                         </AspectRatio>
                     </Grid2>
                 )}
-
+                 <Grid2 xs={12} sx={{justifyContent:'center', display:'flex'}}>
                 <Grid2 xs={6} md={3} sx={{ textAlign: 'right', display: 'inline-flex', justifyContent: 'end', verticalAlign: 'middle' }}>
                     {PrevVids ? (
                         <Button variant='contained' onClick={() => { wheezyVidUpdate( PrevVids ) }} ><ArrowBackOutlinedIcon />More this way</Button>
@@ -109,7 +109,10 @@ export default function WheezyVids() {
                     )}
                     
                 </Grid2>
+                </Grid2>
             </Grid2>
         </Container>
     )
 }
+
+

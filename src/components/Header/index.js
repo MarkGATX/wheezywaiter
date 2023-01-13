@@ -21,7 +21,7 @@ import wheezyWaiterPic from '../../images/wheezy_iso_lg.png'
 const drawerWidth = 240;
 const navItems = ['Home', 'Projects'];
 
-export default function Header({ toggleMode, mode }) {
+export default function Header({ toggleMode, mode, currentPage, handlePageChange }) {
     const trigger = useScrollTrigger({
         disableHysteresis: true,
         threshold: 0,
@@ -86,7 +86,7 @@ export default function Header({ toggleMode, mode }) {
                     </Typography>
                     <Grid2 container component='nav' md={2} spacing={5} sx={{ display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end', flexWrap: 'wrap' }}>
                         {navItems.map((item) => (
-                            <Button key={item} md={12} lg={3} sx={{  m:1 }}>
+                            <Button key={item} md={12} lg={3} sx={{  m:1 }} onClick={() => handlePageChange(item)}>
                                 {item}
                             </Button>
                         ))}

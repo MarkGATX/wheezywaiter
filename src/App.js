@@ -2,6 +2,7 @@ import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import Projects from './components/Projects';
 import React from 'react';
 import { useState } from 'react';
 import { ThemeProvider } from '@mui/material';
@@ -132,15 +133,28 @@ wheezyThemeDark = responsiveFontSizes(wheezyThemeDark)
 
 export default function App() {
   const [mode, setMode] = useState(true);
+  const [currentPage, setCurrentPage] = useState('Home');
   // true will equal dark mode
   const toggleMode = () => {setMode(!mode)}
+
+  const renderMainSection = () => {
+    if (currentPage === 'Home') {
+      return <Main />;
+    }
+    if (currentPage === 'Projects') {
+      return <Projects />;
+    }
+    // return <Main />;
+  };
+
+  const handlePageChange = (page) => setCurrentPage(page);
       
   
   return (
     <ThemeProvider theme={mode ? wheezyThemeDark : wheezyThemeLight}>
       <CssBaseline/>
-        <Header toggleMode={toggleMode} mode={mode}/>
-        <Main />
+        <Header toggleMode={toggleMode} mode={mode} handlePageChange={handlePageChange} currentPage={currentPage} />
+        {renderMainSection()}
         <Footer />
    </ThemeProvider>
   );

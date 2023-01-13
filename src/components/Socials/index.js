@@ -12,11 +12,11 @@ export default function Socials() {
     return (
         <Container>
 
-            <Typography variant='h3'>
+            <Typography variant='h3' color='primary.contrastText'>
                 Socials
             </Typography>
 
-            <Typography variant='body' >
+            <Typography variant='body' color='primary.contrastText'>
                 Follow me on all the socials to make sure you don't miss a thing.
             </Typography>
            
