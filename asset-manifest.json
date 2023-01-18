@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wheezywaiter/static/css/main.e9a707fc.css",
-    "main.js": "/wheezywaiter/static/js/main.3e37cb24.js",
+    "main.css": "/wheezywaiter/static/css/main.212a03b3.css",
+    "main.js": "/wheezywaiter/static/js/main.8d65bc60.js",
     "static/media/redBrick.jpg": "/wheezywaiter/static/media/redBrick.ab54b2851a0385a34bb3.jpg",
     "static/media/wheezy_iso_lg.png": "/wheezywaiter/static/media/wheezy_iso_lg.a1915299b62868ee7f82.png",
     "static/media/eagle.png": "/wheezywaiter/static/media/eagle.f5a7d1fc25eb91c2fd98.png",
@@ -11,11 +11,11 @@
     "static/media/patreon.png": "/wheezywaiter/static/media/patreon.a6ad9075b74cc8f63366.png",
     "static/media/youtube.png": "/wheezywaiter/static/media/youtube.12bf3ea5a7143aef9ddf.png",
     "index.html": "/wheezywaiter/index.html",
-    "main.e9a707fc.css.map": "/wheezywaiter/static/css/main.e9a707fc.css.map",
-    "main.3e37cb24.js.map": "/wheezywaiter/static/js/main.3e37cb24.js.map"
+    "main.212a03b3.css.map": "/wheezywaiter/static/css/main.212a03b3.css.map",
+    "main.8d65bc60.js.map": "/wheezywaiter/static/js/main.8d65bc60.js.map"
   },
   "entrypoints": [
-    "static/css/main.e9a707fc.css",
-    "static/js/main.3e37cb24.js"
+    "static/css/main.212a03b3.css",
+    "static/js/main.8d65bc60.js"
   ]
 }
