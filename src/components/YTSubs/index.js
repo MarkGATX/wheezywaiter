@@ -2,8 +2,6 @@ import { Box } from "@mui/material";
 import Typography from "@mui/material/Typography";
 import { useEffect } from "react";
 import Container from "@mui/material/Container";
-import { useState } from "react";
-import { useTheme } from "@emotion/react";
 import './YTSubs.css'
 
 const useScript = (url) => {
