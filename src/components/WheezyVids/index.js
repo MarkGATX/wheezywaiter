@@ -37,7 +37,6 @@ export default function WheezyVids() {
         const wheezyVidLookup = async () => {
             try {
                 const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4&playlistId=UUQL5ABUvwY7YoW5lgMyAS_w&key=${process.env.REACT_APP_YT_API_KEY}`);
-                console.log(response.data)
                 setMainVid(response.data.items[0].snippet.resourceId.videoId);
                 setResult(response.data.items);
                 setNextVids(response.data.nextPageToken);

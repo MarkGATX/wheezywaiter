@@ -21,6 +21,10 @@ let wheezyThemeLight = createTheme({
       main: '#006687',
       contrastText: '#fff'
     },
+    tertiary: {
+      main:'#e5deff',
+      contrastText:'#1b1736',
+    },
     contrastThreshold: 4.5,
     tonalOffset: .2,
   },
@@ -56,6 +60,10 @@ let wheezyThemeDark = createTheme({
     secondary: {
       main: '#73d1ff',
       contrastText: '#003548',
+    },
+    tertiary: {
+      main:'#474364',
+      contrastText:'#e5deff',
     },
     contrastThreshold: 4.5,
     tonalOffset: .2,
@@ -148,7 +156,7 @@ export default function App() {
   };
 
   const handlePageChange = (page) => setCurrentPage(page);
-      
+  console.log(mode + ' mode in app')  
   
   return (
     <ThemeProvider theme={mode ? wheezyThemeDark : wheezyThemeLight}>

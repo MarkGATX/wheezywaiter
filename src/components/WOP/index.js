@@ -1,7 +1,7 @@
 import { Container, Typography } from "@mui/material"
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2"
 import Paper from "@mui/material/Paper"
-import eagle from '../../images/eagle.png'
+
 import './WOP.css'
 
 const wopMembers = [
