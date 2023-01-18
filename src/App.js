@@ -13,17 +13,24 @@ import CssBaseline from '@mui/material/CssBaseline';
 let wheezyThemeLight = createTheme({
   palette: {
     mode:'light',
+    background: {
+      default: '#fbfcfe'
+    },
+    
     primary: {
+      main: '#006687',
+      contrastText: '#ffffff'
+    },
+    secondary: {
       main: '#c1e8ff',
       contrastText: '#001e2b'
     },
-    secondary: {
-      main: '#006687',
-      contrastText: '#fff'
-    },
     tertiary: {
-      main:'#e5deff',
-      contrastText:'#1b1736',
+      main:'#4d616c',
+      contrastText:'#ffffff',
+    },
+    text : {
+      main:"#191c1e",
     },
     contrastThreshold: 4.5,
     tonalOffset: .2,
@@ -53,17 +60,24 @@ let wheezyThemeLight = createTheme({
 let wheezyThemeDark = createTheme({
   palette: {
     mode:'dark',
+    background: {
+      default: '#191c1e'
+    },
+    
     primary: {
-      main: '#004d67',
-      contrastText: '#c1e8ff'
+      main: '#73d1ff',
+      contrastText: '#003548'
     },
     secondary: {
-      main: '#73d1ff',
-      contrastText: '#003548',
+      main: '#004d67',
+      contrastText: '#c1e8ff',
     },
     tertiary: {
-      main:'#474364',
-      contrastText:'#e5deff',
+      main:'#b5c9d7',
+      contrastText:'#1f333d',
+    },
+    text : {
+      main:"#e1e2e5",
     },
     contrastThreshold: 4.5,
     tonalOffset: .2,

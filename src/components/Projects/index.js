@@ -2,6 +2,7 @@ import Lettuce from "../Lettuce";
 import CCFilm from "../CCFilm";
 import CCGov from "../CCGov";
 import ProjIntro from "../ProjIntro";
+import Driftless from "../Driftless";
 
 
 export default function Projects() {
@@ -12,6 +13,7 @@ export default function Projects() {
             <Lettuce />
             <CCFilm />
             <CCGov />
+            <Driftless />
         </>
     )
 }
