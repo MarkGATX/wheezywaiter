@@ -83,7 +83,7 @@ export default function CCFilm() {
                     <Grid2 xs={6} md={3} key={index}>
                         <AspectRatio ratio='16/9' style={{ maxWidth: '100%' }}>
                             <Tooltip title={video.snippet.title} sx={{ backgroundColor: 'palette.secondary.main', color: 'palette.secondary.contrastText' }} placement='top'>
-                                <img src={video.snippet.thumbnails.high.url} alt={video.snippet.title} onClick={() => setMainVidFilm(video.snippet.resourceId.videoId)} style={{ width: '100%' }} />
+                                <img className='vidThumb' src={video.snippet.thumbnails.high.url} alt={video.snippet.title} onClick={() => setMainVidFilm(video.snippet.resourceId.videoId)} style={{ width: '100%' }} />
                             </Tooltip>
                         </AspectRatio>
                     </Grid2>

@@ -9,6 +9,7 @@ import { ThemeProvider } from '@mui/material';
 import { createTheme } from '@mui/material';
 import { responsiveFontSizes } from '@mui/material';
 import CssBaseline from '@mui/material/CssBaseline';
+import './App.css'
 
 let wheezyThemeLight = createTheme({
   palette: {
@@ -118,9 +119,12 @@ wheezyThemeLight = createTheme(wheezyThemeLight, {
           color: wheezyThemeLight.palette.secondary.contrastText,
           boxShadow: '0 3px 1px -2px rgb(0, 0, 0, .2), 0 2px 2px 0px rgb(0, 0, 0, .14), 0 1px 5px 0 rgb(0, 0, 0, .12)',
           '&:hover, &.Mui-focusVisible': {
-            backgroundColor: '#001e2b',
-            color: wheezyThemeLight.palette.primary.main,
-            boxShadow: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0px rgba(0, 0, 0, .14), 0 1px 10px 0px rgba(0, 0, 0, .12)'
+            backgroundColor: wheezyThemeLight.palette.secondary.contrastText,
+            color: wheezyThemeLight.palette.secondary.main,
+            boxShadow: '0 2px 4px -1px rgba(0, 0, 0, .2), 0 4px 5px 0px rgba(0, 0, 0, .14), 0 1px 10px 0px rgba(0, 0, 0, .12)',
+          },
+          '&:active': {
+            boxShadow: 'inset 0 2px 4px -1px rgba(0, 0, 0, .2), inset 0 4px 5px 0px rgba(0, 0, 0, .14), inset 0 1px 10px 0px rgba(0, 0, 0, .12)',
           }
         },
       },
@@ -140,9 +144,12 @@ wheezyThemeDark = createTheme(wheezyThemeDark, {
           color: wheezyThemeDark.palette.secondary.contrastText,
           boxShadow: '0 3px 1px -2px rgb(0, 0, 0, .2), 0 2px 2px 0px rgb(0, 0, 0, .14), 0 1px 5px 0 rgb(0, 0, 0, .12)',
           '&:hover, &.Mui-focusVisible': {
-            backgroundColor: '#c1e8ff',
-            color: '#004d67',
+            backgroundColor: wheezyThemeDark.palette.secondary.contrastText,
+            color: wheezyThemeDark.palette.secondary.main,
             boxShadow: '0 2px 4px -1px rgba(0, 0, 0, .3), 0 4px 5px 0px rgba(0, 0, 0, .24), 0 1px 10px 0px rgba(0, 0, 0, .22)'
+          },
+          '&:active' : {
+            boxShadow: 'inset 0 2px 4px -1px rgba(0, 0, 0, .3), inset 0 4px 5px 0px rgba(0, 0, 0, .24), inset 0 1px 10px 0px rgba(0, 0, 0, .22)'
           }
         },
       },
@@ -169,7 +176,7 @@ export default function App() {
     // return <Main />;
   };
 
-  const handlePageChange = (page) => setCurrentPage(page);
+  const handlePageChange = (page) => {document.documentElement.scrollTop = 0;setCurrentPage(page);}
   console.log(mode + ' mode in app')  
   
   return (

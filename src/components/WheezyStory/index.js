@@ -3,13 +3,9 @@ import { Typography } from "@mui/material";
 import craigHeadshot from '../../images/Craig_headshot_1000.jpg'
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import { Parallax } from "react-parallax";
-import Box from "@mui/material/Box";
-import { useEffect } from "react";
 // import { useTheme } from "@emotion/react";
 import SubstackSubs from "../SubstackSubs";
 import YTSubs from "../YTSubs";
-import { useState } from "react";
-import { useTheme } from "@emotion/react";
 
 
 
@@ -26,8 +22,10 @@ export default function WheezyStory(props) {
                         <Typography variant="h3" sx={{ color: 'text.main' }}>
                             My name is Craig.
                         </Typography>
-                        <Typography variant='p' sx={{ color: 'text.main' }}>
-                            I've made thousands of videos since 2007 in order to quiet the "I should do somethings" in my brain. And now I've done way too many things but I gotta keep going because I made a deal with the all seeing all knowing space baby in the center of the universe. He gave me YouTube glory in exchange for my beard if I ever stop churning out the vids.<br></br>
+                        <Typography variant='p' sx={{ color: 'text.main', display:'block', mb:2}}>
+                            I've made thousands of videos since 2007 in order to quiet the "I should do somethings" in my brain. And now I've done way too many things but I gotta keep going because I made a deal with the all seeing all knowing space baby in the center of the universe. He gave me YouTube glory in exchange for my beard if I ever stop churning out the vids.
+                            </Typography>
+                        <Typography variant='p' sx={{ color: 'text.main', display:'block' }}>
                             Sometimes my wife, Chyna is in them, too.
                         </Typography>
                     </Grid2>

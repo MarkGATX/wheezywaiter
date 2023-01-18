@@ -35,7 +35,7 @@ export default function Header({ toggleMode, mode, currentPage, handlePageChange
     };
 
     const drawer = (
-        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+        <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center'}}>
             <Typography variant="h6" sx={{ my: 2 }}>
                 WHEEZY
             </Typography>
@@ -43,7 +43,7 @@ export default function Header({ toggleMode, mode, currentPage, handlePageChange
             <List>
                 {navItems.map((item) => (
                     <ListItem key={item} >
-                        <ListItemButton sx={{ textAlign: 'center' }}>
+                        <ListItemButton sx={{ textAlign: 'center' }} onClick={() => handlePageChange(item)}>
                             <ListItemText primary={item} />
                         </ListItemButton>
                     </ListItem>
@@ -80,7 +80,7 @@ export default function Header({ toggleMode, mode, currentPage, handlePageChange
                     </Box>
                     <Typography xs={6} variant="h4" style={{ textAlign: 'center' }} color='primary.contrastText' component="h1" sx={{ flexGrow: 1 }}>
                         WHEEZY WAITER
-                        <Typography variant="subtitle1" style={{ textAlign: 'center' }}>
+                        <Typography variant="body1" component="p" style={{ textAlign: 'center' }}>
                             I make videos.
                         </Typography>
                     </Typography>
@@ -92,7 +92,7 @@ export default function Header({ toggleMode, mode, currentPage, handlePageChange
                         ))}
                         
                     </Grid2>
-                    <IconButton xs={1} sx={{ ml: 3 }} onClick={() => toggleMode()} color="palette.primary.main">
+                    <IconButton xs={1} sx={{ mx: 3 }} onClick={() => toggleMode()} color="palette.primary.main">
                             {mode === true ? <LightMode /> : <DarkMode />}
                         </IconButton>
                 </Toolbar>
@@ -108,7 +108,7 @@ export default function Header({ toggleMode, mode, currentPage, handlePageChange
                     }}
                     sx={{
                         display: { xs: 'block', md: 'none' },
-                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+                        '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth, backgroundColor:'background.default', color:'text.main' },
                     }}
                 >
                     {drawer}
