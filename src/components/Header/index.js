@@ -73,7 +73,7 @@ export default function Header({ toggleMode, mode, currentPage, handlePageChange
                         onClick={handleDrawerToggle}
                         sx={{ mx: 2, display: { md: 'none' } }}
                     >
-                        <MenuIcon />
+                        <MenuIcon sx={{color:'primary.contrastText'}} />
                     </IconButton>
                     <Box xs={2} sm={3} sx={{ display: { xs: 'none', sm: 'block' }, height: '100%' }}>
                         <img src={wheezyWaiterPic} style={{ height: '100%' }} alt='Wheezy Waiter' />
