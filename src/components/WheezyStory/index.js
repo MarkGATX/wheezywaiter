@@ -23,10 +23,10 @@ export default function WheezyStory(props) {
                             My name is Craig.
                         </Typography>
                         <Typography variant='p' sx={{ color: 'text.main', display:'block', mb:2}}>
-                            I've made thousands of videos since 2007 in order to quiet the "I should do somethings" in my brain. And now I've done way too many things but I gotta keep going because I made a deal with the all seeing all knowing space baby in the center of the universe. He gave me YouTube glory in exchange for my beard if I ever stop churning out the vids.
+                            I've made thousands of videos since 2007 in order to quiet the "I should do somethings" in my brain. And now I've done way too many things, but I gotta keep going because I made a deal with the all-seeing, all-knowing space baby in the center of the universe. He gave me YouTube glory in exchange for my beard if I ever stop churning out the vids.
                             </Typography>
                         <Typography variant='p' sx={{ color: 'text.main', display:'block' }}>
-                            Sometimes my wife, Chyna is in them, too.
+                            Sometimes my wife, Chyna, is in them too.
                         </Typography>
                     </Grid2>
                     <Grid2 xs={12} md={7} style={{ height: '100%', mb:3 }}>

@@ -31,7 +31,7 @@ export default function YTSubs() {
                 </Typography>
                 <Box component='section' xs={12} md={5} sx={{display:'flex', flexWrap:'wrap', gap:'1em', alignItems:'center', justifyContent:'center'}} >
                     <Typography variant='body1' component='div'  xs={12}>
-                        Hey, while you're here why don't you subscribe to my YouTube channel?
+                        Hey, while you're here, why don't you subscribe to my YouTube channel?
                     </Typography>
                     <Box className='darkBoxContainer'>
                         <Box className="g-ytsubscribe" data-channel="WheezyWaiter" data-layout="full" data-count="default" xs={12}></Box>
