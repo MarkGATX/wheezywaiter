@@ -59,7 +59,7 @@ export default function Header({ toggleMode, mode, currentPage, handlePageChange
         <>
             <AppBar elevation={trigger ? 4 : 0} sx={{ position: 'sticky', top: 0, display: 'flex', backgroundColor:'primary.main' }}>
                 <Toolbar sx={{ 
-                    height: {xs: 160, md: !trigger ? 300 : 160},
+                    height: {xs: 100, md: !trigger ? 300 : 160},
                     transition: trigger ? "0.3s ease-in" : "0.3s ease-out",
                     flexGrow: 1,
                     display:'flex',
@@ -78,7 +78,7 @@ export default function Header({ toggleMode, mode, currentPage, handlePageChange
                     <Box xs={2} sm={3} sx={{ display: { xs: 'none', sm: 'block' }, height: '100%' }}>
                         <img src={wheezyWaiterPic} style={{ height: '100%' }} alt='Wheezy Waiter' />
                     </Box>
-                    <Typography xs={6} variant="h4" style={{ textAlign: 'center' }} color='primary.contrastText' component="h1" sx={{ flexGrow: 1 }}>
+                    <Typography xs={6} variant="h4"  color='primary.contrastText' component="h1" sx={{ flexGrow: 1, textAlign:'center', lineHeight:'.8em' }}>
                         WHEEZY WAITER
                         <Typography variant="body1" component="p" style={{ textAlign: 'center' }}>
                             I make videos.
