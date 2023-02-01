@@ -21,9 +21,7 @@ export default function CCFilm() {
 
     const wheezyFilmUpdate = async (token) => {
         try {
-            console.log(token)
             const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4&pageToken=${token}&playlistId=PL8dPuuaLjXtN-Bd-H_TGq72CN50Fpv_JX&key=${process.env.REACT_APP_YT_API_KEY}`);
-            console.log(response.data)
             setResultFilm(response.data.items);
             setNextVidsFilm(response.data.nextPageToken);
             setPrevVidsFilm(response.data.prevPageToken)
@@ -36,7 +34,6 @@ export default function CCFilm() {
         const wheezyFilmLookup = async () => {
             try {
                 const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4&playlistId=PL8dPuuaLjXtN-Bd-H_TGq72CN50Fpv_JX&key=${process.env.REACT_APP_YT_API_KEY}`);
-                console.log(response.data)
                 setMainVidFilm(response.data.items[0].snippet.resourceId.videoId);
                 setResultFilm(response.data.items);
                 setNextVidsFilm(response.data.nextPageToken);

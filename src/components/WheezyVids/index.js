@@ -24,9 +24,7 @@ export default function WheezyVids() {
     const wheezyVidUpdate = async (token) => {
        
         try {
-            console.log(token)
             const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4&pageToken=${token}&playlistId=UUQL5ABUvwY7YoW5lgMyAS_w&key=${process.env.REACT_APP_YT_API_KEY}`);
-            console.log(response.data)
             // setMainVid(response.data.items[0].snippet.resourceId.videoId);
             setResult(response.data.items);
             setNextVids(response.data.nextPageToken);
@@ -60,7 +58,7 @@ export default function WheezyVids() {
                 Video goodness...
             </Typography>
             <Grid2 container spacing={3} xs={12} sx={{ display: 'flex', justifyContent: "center", alignItems: 'center', mb: 3 }}>
-                <Grid2 xs={12} >
+                <Grid2  xs={12} >
                     {MainVid ? (
                         <iframe
                             title="Main Video Frame"

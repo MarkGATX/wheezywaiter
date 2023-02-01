@@ -66,7 +66,7 @@ let wheezyThemeDark = createTheme({
     },
     
     primary: {
-      main: '#73d1ff',
+      main: '#AED6ED',
       contrastText: '#003548'
     },
     secondary: {
@@ -177,7 +177,6 @@ export default function App() {
   };
 
   const handlePageChange = (page) => {document.documentElement.scrollTop = 0;setCurrentPage(page);}
-  console.log(mode + ' mode in app')  
   
   return (
     <ThemeProvider theme={mode ? wheezyThemeDark : wheezyThemeLight}>

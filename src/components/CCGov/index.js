@@ -21,9 +21,7 @@ export default function CCGov() {
 
     const wheezyGovUpdate = async (token) => {
         try {
-            console.log(token)
             const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4&pageToken=${token}&playlistId=PL8dPuuaLjXtOfse2ncvffeelTrqvhrz8H&key=${process.env.REACT_APP_YT_API_KEY}`);
-            console.log(response.data)
             setResultGov(response.data.items);
             setNextVidsGov(response.data.nextPageToken);
             setPrevVidsGov(response.data.prevPageToken)
@@ -36,7 +34,6 @@ export default function CCGov() {
         const wheezyGovLookup = async () => {
             try {
                 const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&maxResults=4&playlistId=PL8dPuuaLjXtOfse2ncvffeelTrqvhrz8H&key=${process.env.REACT_APP_YT_API_KEY}`);
-                console.log(response.data)
                 setMainVidGov(response.data.items[0].snippet.resourceId.videoId);
                 setResultGov(response.data.items);
                 setNextVidsGov(response.data.nextPageToken);
